@@ -1,4 +1,4 @@
-# 🧪 Trabalho 2 — Filtros de Média (Blur)
+# 🧪 Trabalho 2 — Filtros de Média (Blur) — Python
 
 **Disciplina:** Processamento Digital de Imagens (CABS010)  
 **Professor:** Bogdan Tomoyuki Nassu  
@@ -10,7 +10,7 @@
 
 ## 🎯 Objetivo
 
-Implementar três algoritmos para o **filtro da média (blur)**:
+Implementar três algoritmos para o **filtro da média (blur)** em Python:
 
 1. **Algoritmo Ingênuo**  
 2. **Filtro Separável** (com ou sem uso de somas anteriores)  
@@ -18,44 +18,28 @@ Implementar três algoritmos para o **filtro da média (blur)**:
 
 ---
 
-## 🛠️ Instruções
+## 📦 Estrutura dos Arquivos
 
-- Todas as três implementações devem estar no **mesmo arquivo** (ex: `blur.c`).
-- Um programa principal (`main.c`) deve permitir testar as três versões.
-- Para imagens **coloridas**, processe cada canal **RGB** independentemente.
-- **Margens:**
-  - Integral: considerar apenas pixels válidos.
-  - Ingênuo e separável: pode ignorar janelas fora da imagem.
+- `main.py`: Interface principal do programa. Permite executar e comparar os três métodos.
+- `blur_algorithms.py`: Contém as implementações dos filtros.
+- `imagens/`: Imagens de teste fornecidas no pacote.
 
 ---
 
-## 🧪 Comparações
+## 🧪 Regras e Observações
 
-Se estiver utilizando OpenCV, compare os resultados com a função `cv::blur`, exceto nas margens (diferenças esperadas).
+- Para imagens **coloridas**, cada canal **R, G e B** deve ser processado separadamente.
+- **Tratamento das bordas:**
+  - **Imagens integrais:** média com apenas pixels válidos.
+  - **Demais:** pode ignorar regiões fora da imagem.
 
----
-
-## 📂 Estrutura dos Arquivos
-
-- `main.c`: Interface principal para executar e comparar os filtros.
-- `blur.c`: Implementações dos três algoritmos.
-- `blur.h`: Declarações de funções e structs auxiliares.
-- `imagens/`: Contém imagens fornecidas para testes.
+- Se usar OpenCV, compare com `cv2.blur()` (resultados devem ser semelhantes, exceto nas bordas).
 
 ---
 
-## ✅ Status
+## ▶️ Como executar
 
-- [x] Estrutura organizada
-- [ ] Implementação do algoritmo ingênuo
-- [ ] Implementação do filtro separável
-- [ ] Implementação com imagem integral
-- [ ] Testes com imagens coloridas
-- [ ] Comparação com OpenCV (opcional)
-
----
-
-## 📦 Compilação (exemplo)
+### 1. Instalar dependências
 
 ```bash
-gcc main.c blur.c -o trabalho_blur
+pip install numpy opencv-python
